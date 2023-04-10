@@ -1,5 +1,16 @@
 import React from "react";
-import {Box, Container, Flex, HStack, Spacer, VStack} from "@chakra-ui/react";
+import {
+    AlertDialog, AlertDialogBody, AlertDialogCloseButton,
+    AlertDialogContent, AlertDialogFooter, AlertDialogHeader,
+    AlertDialogOverlay,
+    Box,
+    Button,
+    Container,
+    Flex,
+    HStack,
+    Spacer,
+    VStack
+} from "@chakra-ui/react";
 import {NavigateFunction, Outlet, useNavigate} from "react-router-dom";
 import LogoSmall from '../assets/logo_small.png';
 import Logo from "../assets/logo.png";
@@ -7,14 +18,28 @@ import {FaDiscord, FaFacebookF, FaInstagram} from "react-icons/all";
 
 export function DefaultLayout() {
     const nav = useNavigate();
-    return <Component nav={nav} />
+    const cancelRef = React.useRef()
+    return <Component nav={nav} cancelRef={cancelRef} />
 }
 
 interface iProps {
     nav: NavigateFunction;
+    cancelRef: any;
+}
+interface iStates {
+    login: boolean;
 }
 
 class Component extends React.Component<iProps, any> {
+
+    constructor(props: iProps) {
+        super(props);
+
+        this.state = {
+            login: false
+        }
+    }
+
     render() {
         return <>
             <nav>
@@ -26,13 +51,37 @@ class Component extends React.Component<iProps, any> {
                         <a href="javascript:;" onClick={() => this.props.nav("/about")}>Über uns</a>
                         <a href="javascript:;" onClick={() => this.props.nav("/faq")}>FAQ</a>
                         <a href="javascript:;" onClick={() => window.location.href="https://discord.gg/wgB9xU4zBq" }>Discord</a>
+                        <Button bg='red' onClick={() => this.setState({login: true})}>Login</Button>
                     </HStack>
                 </Flex>
             </nav>
+
+            <AlertDialog
+                motionPreset='slideInBottom'
+                leastDestructiveRef={this.props.cancelRef}
+                onClose={() => this.setState({login: false})}
+                isOpen={this.state.login}
+                isCentered
+            >
+                <AlertDialogOverlay />
+
+                <AlertDialogContent>
+                    <AlertDialogHeader>Login: Work in Progress</AlertDialogHeader>
+                    <AlertDialogCloseButton />
+                    <AlertDialogBody>
+                        Der Login ist Aktuell noch nicht verfügbar, falls du Unterstützung benötigt melde dich bei uns in Discord im #support Kanal.
+                    </AlertDialogBody>
+                    <AlertDialogFooter>
+                        <Button colorScheme='red' ml={3} onClick={() => this.setState({login: false})}>
+                            Alles klar
+                        </Button>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
+
             <section className="content">
                 <Outlet />
             </section>
-
 
             <Box p={20} bg={"#191622"}>
                 <Flex color='white'>
