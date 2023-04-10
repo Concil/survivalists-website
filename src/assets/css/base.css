@@ -11,3 +11,7 @@ body {
 nav {
     padding: 15px 20px;
 }
+
+a:hover {
+    color: red !important;
+}
