@@ -1,20 +1,9 @@
 import React from "react";
-import {
-    AlertDialog, AlertDialogBody, AlertDialogCloseButton,
-    AlertDialogContent, AlertDialogFooter, AlertDialogHeader,
-    AlertDialogOverlay,
-    Box,
-    Button,
-    Container,
-    Flex,
-    HStack,
-    Spacer,
-    VStack
-} from "@chakra-ui/react";
+
 import {NavigateFunction, Outlet, useNavigate} from "react-router-dom";
 import LogoSmall from '../assets/logo_small.png';
 import Logo from "../assets/logo.png";
-import {FaDiscord, FaFacebookF, FaInstagram} from "react-icons/all";
+import {Button, Link, Navbar, Text, Grid, Container, Image} from "@nextui-org/react";
 
 export function DefaultLayout() {
     const nav = useNavigate();
@@ -42,6 +31,83 @@ class Component extends React.Component<iProps, any> {
 
     render() {
         return <>
+            <Navbar isBordered variant={"floating"}>
+                <Navbar.Brand>
+                    <a href="javascript:;" onClick={() => this.props.nav("/")}><img src={LogoSmall} /></a>
+                    <Text b color="inherit" hideIn="xs" size={"lg"}>
+                        Survivalists.gg
+                    </Text>
+                </Navbar.Brand>
+                <Navbar.Content>
+                    <Navbar.Link onClick={() => this.props.nav("/about") }>Über uns</Navbar.Link>
+                    <Navbar.Link onClick={() => this.props.nav("/faq") }>FAQ</Navbar.Link>
+                    <Navbar.Link onClick={() => window.location.href="https://discord.gg/wgB9xU4zBq" }>Discord</Navbar.Link>
+                    <Navbar.Item>
+                        <Button auto as={Link} href="#" color="error" rounded onClick={() => this.props.nav("/")}>
+                            Account
+                        </Button>
+                    </Navbar.Item>
+                </Navbar.Content>
+            </Navbar>
+
+            <section className="content">
+                <Outlet />
+            </section>
+
+            <footer style={{backgroundColor: 'rgb(25, 22, 34)', color: 'white', paddingTop: 40, paddingBottom: 40}}>
+                <Container>
+                    <Grid.Container gap={2} justify="center">
+                        <Grid xs={12} md={1}>
+                            <Image src={LogoSmall} />
+                        </Grid>
+                        <Grid xs={12} md={3}>
+                            <Grid.Container justify="center" alignItems={"center"}>
+                                <div style={{width: '80%'}}>
+                                    Survivalists ist deine Plattform für spannende Gameserver. Starte jetzt deine Gaming Karriere und Zeige jedem was in dir Steckt!
+                                </div>
+                            </Grid.Container>
+                        </Grid>
+                        <Grid xs={12} md={3}>
+                            <div>
+                                <ul>
+                                    <li><strong>Kontakt</strong></li>
+                                    <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>Support</a></li>
+                                    <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>Discord</a></li>
+                                    <li><a href="javascript:;" onClick={() => window.location.href="https://discord.gg/wgB9xU4zBq" }>Allgemeiner Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </Grid>
+                        <Grid xs={12} md={3}>
+                            <ul>
+                                <li><strong>Folge uns</strong></li>
+                                <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>INSTA</a></li>
+                                <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>DISCORD</a></li>
+                            </ul>
+                        </Grid>
+                    </Grid.Container>
+                </Container>
+            </footer>
+            <footer style={{backgroundColor: 'rgb(17, 17, 17)', color: 'white', paddingTop: 20, paddingBottom: 20}}>
+                <Container>
+                    <Grid.Container gap={2} justify="center">
+                        <Grid xs={12} md={6}>
+                            <ul className="list-inline">
+                                <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>Über Uns</a></li>
+                                <li><a href="javascript:;" onClick={() => this.props.nav("/faq") }>FAQ</a></li>
+                                <li><a href="javascript:;" onClick={() => this.props.nav("/datenschutz") }>Datenschutz</a></li>
+                                <li><a href="javascript:;" onClick={() => this.props.nav("/impressum") }>Impressum</a></li>
+                                <li><a href="javascript:;" onClick={() => window.location.href="https://status.survivalists.gg" }>Status</a></li>
+                            </ul>
+                        </Grid>
+                        <Grid xs={12} md={6}>
+                            &copy; 2023 <a href="javascript:;">survivalists.gg</a> / Alle Rechte vorbehalten
+                        </Grid>
+                    </Grid.Container>
+                </Container>
+            </footer>
+        </>
+
+         /*return <Layout>
             <nav>
                 <Flex align={"center"}>
                     <img src={LogoSmall} alt="" />
@@ -127,6 +193,6 @@ class Component extends React.Component<iProps, any> {
                     </div>
                 </Flex>
             </Box>
-        </>;
+        </Layout>;*/
     }
 }
