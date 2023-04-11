@@ -11,6 +11,7 @@ import {Page404} from "./pages/404";
 import {PageHome} from "./pages/home";
 import {PageAbout} from "./pages/about";
 import {PageSupport} from "./pages/support";
+import {Soon} from "./pages/soon";
 
 
 const container = document.getElementById("root")
@@ -33,9 +34,9 @@ root.render(
             <Routes>
                 <Route path="/" element={<DefaultLayout />}>
                     <Route path="/" element={<PageHome />} />
-                    <Route path="/about" element={<PageAbout />} />
-                    <Route path="/support" element={<PageSupport />} />
-                    <Route path="/faq" element={<PageSupport />} />
+                    <Route path="/about" element={<Soon />} />
+                    <Route path="/support" element={<Soon />} />
+                    <Route path="/faq" element={<Soon />} />
                     <Route path="/*" element={<Page404 />} />
                 </Route>
             </Routes>

@@ -100,7 +100,9 @@ class Component extends React.Component<iProps, any> {
                             </ul>
                         </Grid>
                         <Grid xs={12} md={6}>
-                            &copy; 2023 <a href="javascript:;">survivalists.gg</a> / Alle Rechte vorbehalten
+                                &copy; 2023&nbsp;
+                                <a href="https://survivalists.gg">survivalists.gg</a>&nbsp;
+                            Alle Rechte vorbehalten
                         </Grid>
                     </Grid.Container>
                 </Container>
