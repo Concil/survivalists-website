@@ -39,10 +39,10 @@ export function PageHome() {
                         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
                             <Col>
                                 <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-                                    MINECRAFT
+                                    Survival, Bedrock, Parkour, ...
                                 </Text>
                                 <Text h4 color="white">
-                                    Survival, Bedrock, Parkour, ...
+                                    Minecraft
                                 </Text>
                             </Col>
                         </Card.Header>
@@ -58,10 +58,10 @@ export function PageHome() {
                         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
                             <Col>
                                 <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-                                    RUST
+                                    PVE/PVP Zonen
                                 </Text>
                                 <Text h4 color="white">
-                                    PVP Zones
+                                    Rust
                                 </Text>
                             </Col>
                         </Card.Header>
@@ -77,6 +77,9 @@ export function PageHome() {
                         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
                             <Col>
                                 <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
+                                    Überlebe und Baue
+                                </Text>
+                                <Text h4 color="white">
                                     Valheim
                                 </Text>
                             </Col>
@@ -93,6 +96,9 @@ export function PageHome() {
                         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
                             <Col>
                                 <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
+                                    Überlebe gegen Zombies
+                                </Text>
+                                <Text h4 color="white">
                                     DayZ
                                 </Text>
                             </Col>
