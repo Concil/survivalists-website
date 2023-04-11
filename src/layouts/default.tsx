@@ -39,7 +39,6 @@ class Component extends React.Component<iProps, any> {
                     </Text>
                 </Navbar.Brand>
                 <Navbar.Content>
-                    <Navbar.Link onClick={() => this.props.nav("/about") }>Über uns</Navbar.Link>
                     <Navbar.Link onClick={() => this.props.nav("/faq") }>FAQ</Navbar.Link>
                     <Navbar.Link onClick={() => window.location.href="https://discord.gg/wgB9xU4zBq" }>Discord</Navbar.Link>
                     <Navbar.Item>
@@ -89,10 +88,9 @@ class Component extends React.Component<iProps, any> {
             </footer>
             <footer style={{backgroundColor: 'rgb(17, 17, 17)', color: 'white', paddingTop: 20, paddingBottom: 20}}>
                 <Container>
-                    <Grid.Container gap={2} justify="center">
+                    <Grid.Container gap={2} justify="center" alignItems={"center"}>
                         <Grid xs={12} md={6}>
                             <ul className="list-inline">
-                                <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>Über Uns</a></li>
                                 <li><a href="javascript:;" onClick={() => this.props.nav("/faq") }>FAQ</a></li>
                                 <li><a href="javascript:;" onClick={() => this.props.nav("/datenschutz") }>Datenschutz</a></li>
                                 <li><a href="javascript:;" onClick={() => this.props.nav("/impressum") }>Impressum</a></li>
