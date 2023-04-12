@@ -3,7 +3,63 @@ import React from "react";
 import {FaDiscord, FaFacebookF, FaInstagram} from "react-icons/all";
 import {Container, Text, Grid, Image, Button, Card, Col} from "@nextui-org/react";
 
+interface Card {
+    title: string;
+    subtitle?: string;
+    image: string;
+}
+
 export function PageHome() {
+
+    const cards: Card[] = [
+        {
+            title: 'Minecraft Survival',
+            subtitle: '',
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+        },
+        {
+            title: 'Minecraft CityBuild',
+            subtitle: '',
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+        },
+        {
+            title: 'Minecraft Skywars',
+            subtitle: '',
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+        },
+        {
+            title: 'Minecraft Battle Royal',
+            subtitle: '',
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+        },
+        {
+            title: 'Minecraft BedWars',
+            subtitle: '',
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+        },
+        {
+            title: 'Rust',
+            subtitle: 'Vanilla',
+            image: 'https://images.mein-mmo.de/medien/2023/03/steam-rust.jpg'
+        },
+        {
+            title: 'Rust',
+            subtitle: 'PVE/PVP Zonen',
+            image: 'https://images.mein-mmo.de/medien/2023/03/steam-rust.jpg'
+        },
+        {
+            title: 'Valheim',
+            subtitle: '',
+            image: 'https://img2.storyblok.com/f/157036/2560x1440/16c8a50ea6/2-troll.png'
+        },
+        {
+            title: 'DayZ',
+            subtitle: '',
+            image: 'https://media.altchar.com/prod/images/940_530/gm-9c4b1571-1bcf-48bc-9b1f-664ee51737cd-dayz.jpg'
+        },
+    ];
+
+
     return <>
         <Container css={{
             marginTop: 150
@@ -35,82 +91,31 @@ export function PageHome() {
                     </Text>
                 </Grid.Container>
                 <Grid.Container justify="center" css={{marginTop: 50, marginBottom: 100}}>
-                    <Card css={{width: 350, marginBottom: 10, marginRight: 10}} isPressable isHoverable>
-                        <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-                            <Col>
-                                <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-                                    Survival, Bedrock, Parkour, ...
-                                </Text>
-                                <Text h4 color="white">
-                                    Minecraft
-                                </Text>
-                            </Col>
-                        </Card.Header>
-                        <Card.Image
-                            src="https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg"
-                            objectFit="cover"
-                            width="100%"
-                            height={340}
-                            alt="MINECRAFT"
-                        />
-                    </Card>
-                    <Card css={{width: 350, marginBottom: 10, marginRight: 10}} isPressable isHoverable>
-                        <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-                            <Col>
-                                <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-                                    PVE/PVP Zonen
-                                </Text>
-                                <Text h4 color="white">
-                                    Rust
-                                </Text>
-                            </Col>
-                        </Card.Header>
-                        <Card.Image
-                            src="https://images.mein-mmo.de/medien/2023/03/steam-rust.jpg"
-                            objectFit="cover"
-                            width="100%"
-                            height={340}
-                            alt="RUST"
-                        />
-                    </Card>
-                    <Card css={{width: 350, marginBottom: 10, marginRight: 10}} isPressable isHoverable>
-                        <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-                            <Col>
-                                <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-                                    Überlebe und Baue
-                                </Text>
-                                <Text h4 color="white">
-                                    Valheim
-                                </Text>
-                            </Col>
-                        </Card.Header>
-                        <Card.Image
-                            src="https://img2.storyblok.com/f/157036/2560x1440/16c8a50ea6/2-troll.png"
-                            objectFit="cover"
-                            width="100%"
-                            height={340}
-                            alt="Valheim"
-                        />
-                    </Card>
-                    <Card css={{width: 350, marginBottom: 10, marginRight: 10}} isPressable isHoverable>
-                        <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-                            <Col>
-                                <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-                                    Überlebe gegen Zombies
-                                </Text>
-                                <Text h4 color="white">
-                                    DayZ
-                                </Text>
-                            </Col>
-                        </Card.Header>
-                        <Card.Image
-                            src="https://media.altchar.com/prod/images/940_530/gm-9c4b1571-1bcf-48bc-9b1f-664ee51737cd-dayz.jpg"
-                            objectFit="cover"
-                            width="100%"
-                            height={340}
-                            alt="DayZ"
-                        />
-                    </Card>
+
+                    {
+                        cards.map((card) => {
+                            return <Card css={{width: 350, marginBottom: 10, marginRight: 10}} isPressable isHoverable>
+                                <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
+                                    <Col>
+                                        <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
+                                            {card.subtitle}
+                                        </Text>
+                                        <Text h4 color="white">
+                                            {card.title}
+                                        </Text>
+                                    </Col>
+                                </Card.Header>
+                                <Card.Image
+                                    src={card.image}
+                                    objectFit="cover"
+                                    width="100%"
+                                    height={340}
+                                    alt={card.title}
+                                />
+                            </Card>
+                        })
+                    }
+
                 </Grid.Container>
 
             </Container>

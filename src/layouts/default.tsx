@@ -4,6 +4,7 @@ import {NavigateFunction, Outlet, useNavigate} from "react-router-dom";
 import LogoSmall from '../assets/logo_small.png';
 import Logo from "../assets/logo.png";
 import {Button, Link, Navbar, Text, Grid, Container, Image} from "@nextui-org/react";
+import {Login} from "../components/login";
 
 export function DefaultLayout() {
     const nav = useNavigate();
@@ -42,9 +43,7 @@ class Component extends React.Component<iProps, any> {
                     <Navbar.Link onClick={() => this.props.nav("/faq") }>FAQ</Navbar.Link>
                     <Navbar.Link onClick={() => window.location.href="https://discord.gg/wgB9xU4zBq" }>Discord</Navbar.Link>
                     <Navbar.Item>
-                        <Button auto as={Link} href="#" color="error" rounded onClick={() => this.props.nav("/")}>
-                            Account
-                        </Button>
+                        <Login />
                     </Navbar.Item>
                 </Navbar.Content>
             </Navbar>
@@ -72,7 +71,7 @@ class Component extends React.Component<iProps, any> {
                                     <li><strong>Kontakt</strong></li>
                                     <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>Support</a></li>
                                     <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>Discord</a></li>
-                                    <li><a href="javascript:;" onClick={() => window.location.href="https://discord.gg/wgB9xU4zBq" }>Allgemeiner Kontakt</a></li>
+                                    <li><a href="javascript:;" onClick={() => window.location.href="https://discord.gg/wgB9xU4zBq" }>Kontakt</a></li>
                                 </ul>
                             </div>
                         </Grid>
