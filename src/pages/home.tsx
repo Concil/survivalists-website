@@ -15,7 +15,7 @@ export function PageHome() {
     const cards: Card[] = [
         {
             title: 'Minecraft Survival',
-            subtitle: '',
+            subtitle: 'Grundstücke, Stadt, Zugriffe, ...',
             image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg',
         },
         {
