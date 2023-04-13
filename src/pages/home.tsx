@@ -1,12 +1,13 @@
 import Logo from '../assets/logo.png';
 import React from "react";
 import {FaDiscord, FaFacebookF, FaInstagram} from "react-icons/all";
-import {Container, Text, Grid, Image, Button, Card, Col} from "@nextui-org/react";
+import {Container, Text, Grid, Image, Button, Card, Col, Badge} from "@nextui-org/react";
 
 interface Card {
     title: string;
     subtitle?: string;
     image: string;
+    planing?: boolean;
 }
 
 export function PageHome() {
@@ -15,47 +16,55 @@ export function PageHome() {
         {
             title: 'Minecraft Survival',
             subtitle: '',
-            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg',
         },
         {
             title: 'Minecraft CityBuild',
             subtitle: '',
-            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg',
+            planing: true
         },
         {
             title: 'Minecraft Skywars',
             subtitle: '',
-            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg',
+            planing: true
         },
         {
             title: 'Minecraft Battle Royal',
             subtitle: '',
-            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg',
+            planing: true
         },
         {
             title: 'Minecraft BedWars',
             subtitle: '',
-            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg'
+            image: 'https://cdn.prod.www.spiegel.de/images/aae10006-bf39-48c8-b688-9a44f991c277_w948_r1.778_fpx69.6_fpy50.jpg',
+            planing: true
         },
         {
             title: 'Rust',
             subtitle: 'Vanilla',
-            image: 'https://images.mein-mmo.de/medien/2023/03/steam-rust.jpg'
+            image: 'https://images.mein-mmo.de/medien/2023/03/steam-rust.jpg',
+            planing: true
         },
         {
             title: 'Rust',
             subtitle: 'PVE/PVP Zonen',
-            image: 'https://images.mein-mmo.de/medien/2023/03/steam-rust.jpg'
+            image: 'https://images.mein-mmo.de/medien/2023/03/steam-rust.jpg',
+            planing: true
         },
         {
             title: 'Valheim',
             subtitle: '',
-            image: 'https://img2.storyblok.com/f/157036/2560x1440/16c8a50ea6/2-troll.png'
+            image: 'https://img2.storyblok.com/f/157036/2560x1440/16c8a50ea6/2-troll.png',
+            planing: true
         },
         {
             title: 'DayZ',
             subtitle: '',
-            image: 'https://media.altchar.com/prod/images/940_530/gm-9c4b1571-1bcf-48bc-9b1f-664ee51737cd-dayz.jpg'
+            image: 'https://media.altchar.com/prod/images/940_530/gm-9c4b1571-1bcf-48bc-9b1f-664ee51737cd-dayz.jpg',
+            planing: true
         },
     ];
 
@@ -105,6 +114,14 @@ export function PageHome() {
                                         </Text>
                                     </Col>
                                 </Card.Header>
+                                { card.planing &&
+                                    <Card.Footer css={{ position: "absolute", zIndex: 1, bottom: 0}}>
+                                        <Badge color="error" variant="bordered">
+                                            IN PLANUNG
+                                        </Badge>
+                                    </Card.Footer>
+                                }
+
                                 <Card.Image
                                     src={card.image}
                                     objectFit="cover"
