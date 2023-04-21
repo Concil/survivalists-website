@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Link, Modal} from "@nextui-org/react";
+import {Button, Link, Modal, Text} from "@nextui-org/react";
 
 interface iStates {
     login: boolean;
@@ -47,7 +47,6 @@ export class Login extends React.Component<any, iStates> {
 
     render() {
         return <>
-
             <Button auto as={Link} href="#" color="error" rounded onClick={() => this.setState({open: true})}>
                 Account
             </Button>
@@ -58,8 +57,18 @@ export class Login extends React.Component<any, iStates> {
                 open={this.state.open}
                 onClose={this.onModalHide.bind(this)}
             >
-
-                <Button onClick={this.onStartLogin.bind(this)}>Discord Login</Button>
+                <Modal.Header>
+                    <Text id="modal-title" size={18}>
+                        Coming Soon
+                    </Text>
+                </Modal.Header>
+                <Modal.Body>
+                    <Text>
+                        Dieses Feature ermöglicht dir bald, auf deine gesammelten Daten wie:
+                        Level, Geld oder sonstige Informationen die du beim Spielern hinterlässt, zugreifen sowie manche Daten ändern können.
+                    </Text>
+                    <Button onClick={this.onStartLogin.bind(this)} style={{display: 'none'}}>Discord Login</Button>
+                </Modal.Body>
             </Modal>
         </>;
     }

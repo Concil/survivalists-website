@@ -2,8 +2,7 @@ import React from "react";
 
 import {NavigateFunction, Outlet, useNavigate} from "react-router-dom";
 import LogoSmall from '../assets/logo_small.png';
-import Logo from "../assets/logo.png";
-import {Button, Link, Navbar, Text, Grid, Container, Image} from "@nextui-org/react";
+import {Navbar, Text, Grid, Container, Image} from "@nextui-org/react";
 import {Login} from "../components/login";
 
 export function DefaultLayout() {
@@ -32,7 +31,7 @@ class Component extends React.Component<iProps, any> {
 
     render() {
         return <>
-            <Navbar isBordered variant={"floating"}>
+            <Navbar isBordered variant={"floating"} style={{position: 'absolute'}}>
                 <Navbar.Brand>
                     <a href="javascript:;" onClick={() => this.props.nav("/")}><img src={LogoSmall} /></a>
                     <Text b color="inherit" hideIn="xs" size={"lg"}>
@@ -69,17 +68,17 @@ class Component extends React.Component<iProps, any> {
                             <div>
                                 <ul>
                                     <li><strong>Kontakt</strong></li>
-                                    <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>Support</a></li>
-                                    <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>Discord</a></li>
-                                    <li><a href="javascript:;" onClick={() => window.location.href="https://discord.gg/wgB9xU4zBq" }>Kontakt</a></li>
+                                    <li><a onClick={() => this.props.nav("/about") }>Support</a></li>
+                                    <li><a onClick={() => window.location.href="https://discord.gg/wgB9xU4zBq" } target={"_blank"}>Discord</a></li>
+                                    <li><a onClick={() => this.props.nav("/contact") }>Kontakt</a></li>
                                 </ul>
                             </div>
                         </Grid>
                         <Grid xs={12} md={3}>
                             <ul>
                                 <li><strong>Folge uns</strong></li>
-                                <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>INSTA</a></li>
-                                <li><a href="javascript:;" onClick={() => this.props.nav("/about") }>DISCORD</a></li>
+                                <li><a onClick={() => this.props.nav("/about") }>Instagram</a></li>
+                                <li><a onClick={() => this.props.nav("/about") }>DISCORD</a></li>
                             </ul>
                         </Grid>
                     </Grid.Container>
@@ -90,10 +89,10 @@ class Component extends React.Component<iProps, any> {
                     <Grid.Container gap={2} justify="center" alignItems={"center"}>
                         <Grid xs={12} md={6}>
                             <ul className="list-inline">
-                                <li><a href="javascript:;" onClick={() => this.props.nav("/faq") }>FAQ</a></li>
-                                <li><a href="javascript:;" onClick={() => this.props.nav("/datenschutz") }>Datenschutz</a></li>
-                                <li><a href="javascript:;" onClick={() => this.props.nav("/impressum") }>Impressum</a></li>
-                                <li><a href="javascript:;" onClick={() => window.location.href="https://status.survivalists.gg" }>Status</a></li>
+                                <li><a onClick={() => this.props.nav("/faq") }>FAQ</a></li>
+                                <li style={{display: 'none'}}><a href="javascript:;" onClick={() => this.props.nav("/datenschutz") }>Datenschutz</a></li>
+                                <li><a onClick={() => this.props.nav("/impressum") }>Impressum</a></li>
+                                <li><a onClick={() => window.location.href="https://status.survivalists.gg" }>Status</a></li>
                             </ul>
                         </Grid>
                         <Grid xs={12} md={6}>
