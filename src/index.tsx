@@ -13,6 +13,7 @@ import {PageAbout} from "./pages/about";
 import {PageSupport} from "./pages/support";
 import {Soon} from "./pages/soon";
 import {PageImprint} from "./pages/imprint";
+import {PageFAQ} from "./pages/faq";
 
 
 const container = document.getElementById("root")
@@ -37,7 +38,7 @@ root.render(
                     <Route path="/" element={<PageHome />} />
                     <Route path="/about" element={<Soon />} />
                     <Route path="/support" element={<Soon />} />
-                    <Route path="/faq" element={<Soon />} />
+                    <Route path="/faq" element={<PageFAQ />} />
                     <Route path="/impressum" element={<PageImprint />} />
                     <Route path="/*" element={<Page404 />} />
                 </Route>
