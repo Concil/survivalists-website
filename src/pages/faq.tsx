@@ -46,7 +46,7 @@ export function PageFAQ() {
                                 <Collapse title="Wie verdiene ich Geld?">
                                     <Text>
                                         Du kannst indem du dich raus in die Wildnis bewegst, Resourcen wie
-                                        Bronze, Eisen, Diamanten und viele weitere Gegenstände abbaust,
+                                        Kupfer, Eisen, Diamanten und viele weitere Gegenstände abbaust,
                                         beim Schmied "Bob" in der Burg Verkaufen und damit deine SURVCOINS verdienen.
                                     </Text>
                                 </Collapse>
