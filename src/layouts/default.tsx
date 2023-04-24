@@ -95,9 +95,9 @@ class Component extends React.Component<iProps, any> {
                                 <li><a onClick={() => window.location.href="https://status.survivalists.gg" }>Status</a></li>
                             </ul>
                         </Grid>
-                        <Grid xs={12} md={6}>
-                                &copy; 2023&nbsp;
-                                <a href="https://survivalists.gg">survivalists.gg</a>&nbsp;
+                        <Grid xs={12} md={6} style={{textAlign: 'right'}} justify="flex-end">
+                            &copy; 2023&nbsp;
+                            <a href="https://survivalists.gg">survivalists.gg</a>&nbsp;
                             Alle Rechte vorbehalten
                         </Grid>
                     </Grid.Container>
