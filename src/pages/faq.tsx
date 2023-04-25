@@ -33,8 +33,8 @@ export function PageFAQ() {
                         <Grid>
                             <Collapse
                                 shadow
-                                title="Wie Betrette ich den Server?"
-                                subtitle="Der schnellste weg, den Server zu betretten"
+                                title="Wie Betrete ich den Server?"
+                                subtitle="Der schnellste weg, den Server zu betreten"
                             >
                                 <Text>
                                     IP: mc.survivalists.gg
