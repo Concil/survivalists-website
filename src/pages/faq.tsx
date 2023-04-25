@@ -71,6 +71,19 @@ export function PageFAQ() {
                                         Dazu kannst du einfach jedes Grundstück, das auf dem Schild "Frei/Zur Vermietung" steht,
                                         mit einem Rechtsklick mieten sobald du das Geld besitzt.
                                     </Text>
+                                    <Text>
+                                        Als Alternative kannst du zur Verwalterin am Spawn gehen, und dort deine Größe und das Freie Grundstück Teleportieren lassen.
+                                        Sie dient auch zur Ansicht, wieviele Grundstücke noch frei sind.
+                                    </Text>
+                                </Collapse>
+                                <Collapse title="Wie kann ich die Miete im voraus zahlen?">
+                                    <Text>
+                                        Begebe dich einfach zu deinem Grundstück und klicke solange rechts klick drauf,
+                                        bis du deine Gewünschte Zeit erreicht hast.
+                                    </Text>
+                                    <Text>
+                                        Das wird bis maximal 30 Tagen gehen.
+                                    </Text>
                                 </Collapse>
                                 <Collapse title="Kann ich ein Grundstück umziehen?">
                                     <Text>
